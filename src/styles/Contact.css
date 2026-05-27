@@ -1,0 +1,231 @@
+
+/* CONTACT PAGE BACKGROUND */
+
+.contact-page{
+    min-height: 100vh;
+    padding: 50px 20px;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("../assets/school1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.contact-page::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(113, 127, 234, 0.55);
+    z-index: 1;
+}
+
+/* ===================== */
+/* TITLE */
+/* ===================== */
+
+.contact-title{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #140101;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.contact-title::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background: linear-gradient(to right, #304abf, #405cc8);
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+/* ===================== */
+/* MAIN CONTAINER */
+/* ===================== */
+
+.contact-container{
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================== */
+/* INFO CARD (LEFT) */
+/* ===================== */
+
+.contact-info-card{
+    flex: 1;
+    min-width: 300px;
+
+    background: rgba(30, 54, 164, 0.85);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+
+    transition: 0.3s ease;
+}
+
+.contact-info-card:hover{
+    transform: translateY(-5px);
+}
+
+.contact-info-card h4{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.contact-info-card p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    opacity: 0.95;
+}
+
+/* Instagram link */
+.insta-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    color: rgb(212, 44, 6);
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(255,255,255,0.15);
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.insta-link:hover{
+    background: rgba(255,255,255,0.25);
+}
+
+/* ===================== */
+/* FORM CARD (RIGHT) */
+/* ===================== */
+
+.contact-form-card{
+    flex: 1.2;
+    min-width: 320px;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* top bar */
+.contact-form-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background: linear-gradient(to right, #2952ff, #4b6fff, #7a8cff);
+}
+
+.contact-form-card h4{
+    font-size: 28px;
+    font-weight: 800;
+    color: #0b1b45;
+    margin-bottom: 20px;
+}
+
+/* ===================== */
+/* INPUTS */
+/* ===================== */
+
+.contact-form-card input,
+.contact-form-card textarea{
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* focus effect */
+.contact-form-card input:focus,
+.contact-form-card textarea:focus{
+    outline: none;
+    border-color: #2952ff;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(41,82,255,0.15);
+}
+
+/* textarea */
+.contact-form-card textarea{
+    min-height: 130px;
+    resize: none;
+}
+
+/* ===================== */
+/* BUTTON */
+/* ===================== */
+
+.contact-form-card button{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2952ff, #4b6fff);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(41,82,255,0.2);
+}
+
+.contact-form-card button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(41,82,255,0.3);
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media(max-width:768px){
+
+    .contact-title{
+        font-size: 32px;
+    }
+
+    .contact-container{
+        flex-direction: column;
+    }
+
+    .contact-info-card,
+    .contact-form-card{
+        width: 100%;
+    }
+}

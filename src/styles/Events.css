@@ -1,0 +1,282 @@
+/* PAGE */
+
+.events-page{
+  background:#f4f7ff;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+
+
+/* ================= HERO SECTION ================= */
+
+.events-hero{
+  background:
+  linear-gradient(rgba(37,99,235,0.88),rgba(13,55,170,0.88)),
+  url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop");
+
+  background-size:cover;
+  background-position:center;
+
+  padding:120px 20px;
+  text-align:center;
+  color:white;
+  position:relative;
+}
+
+
+
+/* CURVE EFFECT */
+
+.events-hero::after{
+  content:"";
+  position:absolute;
+  bottom:-1px;
+  left:0;
+  width:100%;
+  height:100px;
+  background:white;
+  border-radius:100% 100% 0 0;
+}
+
+
+
+/* HERO TEXT */
+
+.events-hero h1{
+  font-size:70px;
+  font-weight:900;
+  margin-bottom:20px;
+  letter-spacing:1px;
+}
+
+.events-hero p{
+  max-width:760px;
+  margin:auto;
+  font-size:19px;
+  line-height:1.9;
+  color:#e2e8f0;
+}
+
+
+
+
+
+/* ================= EVENTS GRID ================= */
+
+.events-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:35px;
+  justify-content:center;
+  margin-top:40px;
+}
+
+
+
+
+
+/* ================= EVENT CARD ================= */
+
+.event-card{
+  width:360px;
+  background:white;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:0.4s;
+  position:relative;
+}
+
+.event-card:hover{
+  transform:translateY(-12px);
+}
+
+
+
+
+
+/* ================= IMAGE ================= */
+
+.event-image{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.event-card:hover .event-image{
+  transform:scale(1.05);
+}
+
+
+
+
+
+/* ================= CONTENT ================= */
+
+.event-content{
+  padding:28px;
+}
+
+
+
+
+
+/* DATE */
+
+.event-date{
+  display:inline-block;
+  background:linear-gradient(to right,#010b1f,#00113e);
+  color:white;
+  padding:8px 16px;
+  border-radius:50px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+
+
+
+
+/* TITLE */
+
+.event-content h3{
+  font-size:28px;
+  font-weight:800;
+  color:#0f172a;
+  margin-bottom:15px;
+  line-height:1.3;
+}
+
+
+
+
+
+/* DESCRIPTION */
+
+.event-content p{
+  color:#64748b;
+  line-height:1.9;
+  font-size:20px;
+}
+
+
+
+
+
+/* ================= SHINE EFFECT ================= */
+
+.event-card::before{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-120%;
+  width:250px;
+  height:250px;
+  background:rgba(98,77,173,0.25);
+  transform:rotate(25deg);
+  transition:0.8s;
+}
+
+.event-card:hover::before{
+  top:120%;
+  left:120%;
+}
+
+
+
+
+
+/* ================= IMAGE MODAL ================= */
+
+.image-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.92);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding:20px;
+}
+
+
+
+
+
+/* FULL IMAGE */
+
+.full-image{
+  max-width:92%;
+  max-height:92%;
+  border-radius:24px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  animation:zoomIn 0.4s ease;
+}
+
+
+
+
+
+/* CLOSE BUTTON */
+
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:40px;
+  color:white;
+  font-size:55px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+
+
+
+/* ANIMATION */
+
+@keyframes zoomIn{
+
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+
+
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .events-hero{
+    padding:90px 20px;
+  }
+
+  .events-hero h1{
+    font-size:45px;
+  }
+
+  .events-hero p{
+    font-size:16px;
+  }
+
+  .event-card{
+    width:100%;
+  }
+
+}

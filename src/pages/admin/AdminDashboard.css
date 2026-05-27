@@ -1,0 +1,85 @@
+/* PAGE */
+
+.dashboard-page{
+  padding:30px;
+  background:#eff6ff;
+  min-height:100vh;
+}
+
+
+
+/* TOP */
+
+.dashboard-top{
+  margin-bottom:40px;
+}
+
+.dashboard-top h1{
+  font-size:42px;
+  font-weight:800;
+  color:#1e3a8a;
+}
+
+.dashboard-top p{
+  color:#030b17;
+  margin-top:10px;
+  font-size:25px;
+}
+
+
+
+/* GRID */
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+
+
+/* CARD */
+
+.dashboard-card{
+  background:white;
+  padding:35px;
+  border-radius:28px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(37,99,235,0.08);
+  transition:0.4s;
+  border:1px solid #dbeafe;
+}
+
+.dashboard-card:hover{
+  transform:translateY(-8px);
+}
+
+
+
+/* ICON */
+
+.dashboard-icon{
+  font-size:80px;
+  margin-bottom:20px;
+}
+
+
+
+/* NUMBER */
+
+.dashboard-card h2{
+  font-size:45px;
+  font-weight:900;
+  color:#062c7c;
+}
+
+
+
+/* TEXT */
+
+.dashboard-card p{
+  margin-top:10px;
+  color:#64748b;
+  font-size:17px;
+  font-weight:600;
+}

@@ -1,0 +1,138 @@
+.admin-admission-page{
+  padding: 30px;
+  background: #f1f5f9;
+  min-height: 100vh;
+  
+}
+
+
+
+/* HEADER */
+
+.admin-admission-header{
+  margin-bottom: 25px;
+}
+
+.admin-admission-header h1{
+  font-size: 50px;
+  font-weight: 700;
+  color: #1247c2;
+  margin-bottom: 8px;
+}
+
+.admin-admission-header p{
+  color: #20252c;
+  font-size: 20px;
+}
+
+
+
+
+/* TABLE CONTAINER */
+
+.table-container{
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+
+
+
+/* TABLE */
+
+.admission-table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1400px;
+}
+
+
+
+
+/* TABLE HEAD */
+
+.admission-table thead{
+  background: linear-gradient(to right,#2563eb,#1d4ed8);
+  color: white;
+}
+
+.admission-table th{
+  padding: 16px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+
+
+/* TABLE BODY */
+
+.admission-table td{
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 18px;
+  vertical-align: top;
+}
+
+.admission-table tbody tr{
+  transition: 0.3s;
+}
+
+.admission-table tbody tr:hover{
+  background: #f8fafc;
+}
+
+
+
+
+/* DELETE BUTTON */
+
+.delete-btn{
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.delete-btn:hover{
+  background: #dc2626;
+}
+
+
+
+
+/* NO DATA */
+
+.no-data{
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .admin-admission-page{
+    padding: 15px;
+  }
+
+  .admin-admission-header h1{
+    font-size: 26px;
+  }
+
+}

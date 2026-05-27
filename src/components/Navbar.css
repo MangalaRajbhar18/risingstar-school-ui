@@ -1,0 +1,122 @@
+/* CLICKABLE LOGO */
+
+.logo-link{
+  text-decoration:none;
+}
+
+
+
+
+
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  cursor:pointer;
+}
+
+
+
+
+
+.school-logo{
+  width:92px;
+  height:92px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  transition:0.4s;
+}
+
+
+
+
+
+.school-logo:hover{
+  transform:scale(1.08);
+}
+/* NAVBAR BACKGROUND */
+.main-navbar {
+  background: #1d36b6; /* light like screenshot */
+  padding: 10px 40px;
+  border-bottom: 1px solid #ddd;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* FLEX CONTAINER */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* TEXT */
+.school-text h5 {
+  margin: 0;
+  color: #a0b0c9;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.school-text span {
+  font-size: 40px;
+  color: rgb(244, 232, 232);
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* LINKS */
+.nav-menu a {
+  text-decoration: none;
+  color: #efe2e2;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-menu a:hover {
+  color: #1b71f4;
+}
+
+/* ACTIVE HOME BUTTON (LIKE RED BOX IN IMAGE) */
+.active-btn {
+  background: #1251b0;
+  color: white !important;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+
+/* OPTIONAL: ACTIVE ROUTE */
+.nav-menu a.active:not(.active-btn) {
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* ADMIN BUTTON ICON */
+
+.admin-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+
+
+
+
+.admin-icon{
+  color: rgb(163, 194, 194);
+  width: 30px;
+}

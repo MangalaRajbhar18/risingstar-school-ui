@@ -1,0 +1,296 @@
+/* SECTION */
+
+.noticeboard-section{
+  padding:40px 20px;
+  background:#f4f7ff;
+}
+
+
+
+
+
+/* MAIN CONTAINER */
+
+.noticeboard-container{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  gap:20px;
+  align-items:stretch;
+}
+
+
+
+
+
+/* LEFT NOTICE */
+
+.notice-side{
+  flex:1.2;
+  background:white;
+  border-radius:28px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+
+
+
+
+/* RIGHT PAMPHLET */
+
+.pamphlet-side{
+  width:554px;
+  background:white;
+  border-radius:28px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+
+
+
+
+/* HEADER */
+
+.notice-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+
+
+
+
+.notice-tag{
+  color:#2563eb;
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:800;
+}
+
+
+
+
+
+.live-badge{
+  background:#dbeafe;
+  color:#2563eb;
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:700;
+}
+
+
+
+
+
+/* NOTICE CARD */
+
+.notice-card{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  background:#f8fafc;
+  padding:18px;
+  border-radius:24px;
+  min-height:250px;
+
+  animation:fadeEffect 0.6s ease;
+}
+
+
+
+
+
+/* NOTICE IMAGE */
+
+.notice-small-image{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+
+
+
+
+/* CONTENT */
+
+.notice-content{
+  flex:1;
+}
+
+
+
+
+
+.notice-content h2{
+  font-size:28px;
+  font-weight:900;
+  color:#02113b;
+  margin-bottom:14px;
+  line-height:1.4;
+}
+
+
+
+
+
+.notice-content p{
+  color:#64748b;
+  line-height:1.8;
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+
+
+
+
+.notice-date{
+  display:inline-block;
+  background:#dbeafe;
+  color:#2563eb;
+  padding:8px 15px;
+  border-radius:50px;
+  font-size:17px;
+  font-weight:700;
+}
+
+
+
+
+
+
+
+
+
+
+.pamphlet-card-home{
+  animation:fadeEffect 0.10s ease;
+}
+
+
+
+
+
+.pamphlet-image{
+  width:100%;
+  height:440px;
+  object-fit:contain;
+  background:#f8fafc;
+  border-radius:22px;
+  padding:10px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+
+
+
+
+.pamphlet-image:hover{
+  transform:scale(1.02);
+}
+
+
+
+
+
+/* MODAL */
+
+.image-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.88);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+
+
+
+
+.full-image{
+  width:75%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:18px;
+}
+
+
+
+
+
+.close-modal{
+  position:absolute;
+  top:25px;
+  right:35px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
+}
+
+
+
+
+
+/* ANIMATION */
+
+@keyframes fadeEffect{
+
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+  .noticeboard-container{
+    flex-direction:column;
+  }
+
+  .pamphlet-side{
+    width:100%;
+  }
+
+  .notice-card{
+    flex-direction:column;
+  }
+
+  .notice-small-image{
+    width:100%;
+    height:240px;
+  }
+
+  .notice-content h2{
+    font-size:24px;
+  }
+
+  .pamphlet-image{
+    height:350px;
+  }
+}
