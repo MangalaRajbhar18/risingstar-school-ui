@@ -172,14 +172,7 @@ function AdminPamphlet() {
           </p>
 
         </div>
-
-
-
-
-
-
-
-
+        
         {/* FORM */}
 
         <div className="pamphlet-form-card">
@@ -218,14 +211,7 @@ function AdminPamphlet() {
           </form>
 
         </div>
-
-
-
-
-
-
-
-
+        
         {/* GRID */}
 
         <div className="pamphlet-grid">

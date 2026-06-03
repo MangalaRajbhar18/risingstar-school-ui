@@ -6,6 +6,7 @@ function AdminMessages() {
   const [messages, setMessages] = useState([]);
 
   // FETCH CONTACT MESSAGES
+
   const getMessages = async () => {
 
     try {
@@ -18,7 +19,7 @@ function AdminMessages() {
 
       setMessages(data);
 
-    } catch(error) {
+    } catch (error) {
 
       console.log(error);
     }
@@ -27,28 +28,63 @@ function AdminMessages() {
 
 
   // DELETE MESSAGE
+
   const deleteMessage = async (id) => {
 
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this message?"
     );
 
-    if(!confirmDelete) return;
+    if (!confirmDelete) return;
 
     try {
 
       await fetch(
         `http://localhost:8080/api/contact/${id}`,
         {
-          method:"DELETE"
+          method: "DELETE",
         }
       );
 
       getMessages();
 
-    } catch(error) {
+    } catch (error) {
 
       console.log(error);
+    }
+  };
+
+
+
+  // HANDLE ACTIONS
+
+  const handleAction = (id, action) => {
+
+    if (action === "followup") {
+
+      setMessages(
+        messages.map((msg) =>
+          msg.id === id
+            ? { ...msg, status: "Follow Up" }
+            : msg
+        )
+      );
+    }
+
+    if (action === "confirm") {
+
+      setMessages(
+        messages.map((msg) =>
+          msg.id === id
+            ? { ...msg, status: "Confirmed" }
+            : msg
+        )
+      );
+    }
+
+    if (action === "delete") {
+
+      deleteMessage(id);
     }
   };
 
@@ -62,7 +98,6 @@ function AdminMessages() {
 
 
 
-
   return (
 
     <div className="messages-page">
@@ -72,10 +107,13 @@ function AdminMessages() {
       <div className="messages-header">
 
         <div>
+
           <h1>Contact Messages</h1>
-          <p>
-            <h2> Manage all contact form submissions here.</h2>
-          </p>
+
+          <h2>
+            Manage all contact form submissions here.
+          </h2>
+
         </div>
 
         <div className="message-count">
@@ -111,51 +149,109 @@ function AdminMessages() {
 
           <tbody>
 
-            {
-              messages.map((msg) => (
+            {messages.map((msg) => (
 
-                <tr key={msg.id}>
+              <tr key={msg.id}>
 
-                  <td>{msg.id}</td>
+                <td>{msg.id}</td>
 
-                  <td>
-                    <div className="user-box">
-                      <div className="user-avatar">
-                        {msg.fullname.charAt(0)}
-                      </div>
+                <td>
 
-                      <span>
-                        {msg.fullname}
-                      </span>
+                  <div className="user-box">
+
+                    <div className="user-avatar">
+
+                      {(msg.fullname || "U")
+                        .charAt(0)
+                        .toUpperCase()}
+
                     </div>
-                  </td>
 
-                  <td>{msg.contactnumber}</td>
+                    <span>
+                      {msg.fullname || "Unknown User"}
+                    </span>
 
-                  <td>{msg.email}</td>
+                  </div>
 
-                  <td className="message-text">
-                    {msg.message}
-                  </td>
+                </td>
 
-                  <td>
+                <td>{msg.contactnumber || "N/A"}</td>
 
-                    <button
-                      className="delete-btn"
-                      onClick={() => deleteMessage(msg.id)}
-                    >
+                <td>{msg.email || "N/A"}</td>
+
+                <td className="message-text">
+                  {msg.message || "No message"}
+                </td>
+
+                <td>
+
+                  <select
+                    className={
+                      msg.status === "Confirmed"
+                        ? "action-dropdown confirmed"
+                        : msg.status === "Follow Up"
+                        ? "action-dropdown followup"
+                        : "action-dropdown"
+                    }
+                    value={
+                      msg.status === "Confirmed"
+                        ? "confirm"
+                        : msg.status === "Follow Up"
+                        ? "followup"
+                        : ""
+                    }
+                    onChange={(e) =>
+                      handleAction(
+                        msg.id,
+                        e.target.value
+                      )
+                    }
+                  >
+
+                    <option value="">
+                      Select Action
+                    </option>
+
+                    <option value="followup">
+                      Follow Up
+                    </option>
+
+                    <option value="confirm">
+                      Confirm
+                    </option>
+
+                    <option value="delete">
                       Delete
-                    </button>
+                    </option>
 
-                  </td>
+                  </select>
 
-                </tr>
-              ))
-            }
+                </td>
+
+              </tr>
+            ))}
 
           </tbody>
 
         </table>
+
+
+
+        {messages.length === 0 && (
+
+          <div
+            style={{
+              textAlign: "center",
+              padding: "20px",
+              fontWeight: "bold",
+            }}
+          >
+
+            No messages found.
+
+          </div>
+
+        )}
 
       </div>
 

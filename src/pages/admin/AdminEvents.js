@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./AdminEvents.css";
+import Swal from "sweetalert2";
 
 function AdminEvents() {
 
@@ -8,15 +9,11 @@ function AdminEvents() {
   const [editId, setEditId] = useState(null);
 
   const [eventData, setEventData] = useState({
-
     title: "",
     date: "",
     description: "",
     image: ""
   });
-
-
-
 
   // FETCH EVENTS
 
@@ -38,16 +35,11 @@ function AdminEvents() {
     }
   };
 
-
-
   useEffect(() => {
 
     fetchEvents();
 
   }, []);
-
-
-
 
   // HANDLE INPUT
 
@@ -61,9 +53,6 @@ function AdminEvents() {
     });
   };
 
-
-
-
   // ADD + UPDATE EVENT
 
   const handleSubmit = async (e) => {
@@ -74,132 +63,135 @@ function AdminEvents() {
 
       let response;
 
-
-
-      // UPDATE EVENT
-
-      if(editId){
+      if (editId) {
 
         response = await fetch(
-
           `http://localhost:8080/api/events/${editId}`,
-
           {
-            method:"PUT",
-
-            headers:{
-              "Content-Type":"application/json"
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
             },
-
-            body:JSON.stringify(eventData)
+            body: JSON.stringify(eventData)
           }
         );
-      }
 
-
-
-      // ADD EVENT
-
-      else{
+      } else {
 
         response = await fetch(
-
           "http://localhost:8080/api/events",
-
           {
-            method:"POST",
-
-            headers:{
-              "Content-Type":"application/json"
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
             },
-
-            body:JSON.stringify(eventData)
+            body: JSON.stringify(eventData)
           }
         );
       }
 
+      if (response.ok) {
 
-
-      if(response.ok){
-
-        alert(editId ? "Event Updated Successfully" : "Event Added Successfully");
-
-
-
-        setEventData({
-
-          title:"",
-          date:"",
-          description:"",
-          image:""
+        Swal.fire({
+          icon: "success",
+          title: editId
+            ? "Event Updated Successfully!"
+            : "Event Added Successfully!",
+          showConfirmButton: false,
+          timer: 1500
         });
 
-
+        setEventData({
+          title: "",
+          date: "",
+          description: "",
+          image: ""
+        });
 
         setEditId(null);
 
         fetchEvents();
       }
 
-    } catch(error){
+    } catch (error) {
 
       console.log(error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Something went wrong."
+      });
     }
   };
-
-
-
 
   // EDIT EVENT
 
   const editEvent = (event) => {
 
     setEventData({
-
-      title:event.title,
-      date:event.date,
-      description:event.description,
-      image:event.image
+      title: event.title,
+      date: event.date,
+      description: event.description,
+      image: event.image
     });
 
     setEditId(event.id);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
-
-
-
 
   // DELETE EVENT
 
   const deleteEvent = async (id) => {
 
+    const result = await Swal.fire({
+      title: "Delete Event?",
+      text: "You won't be able to recover it!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, Delete"
+    });
+
+    if (!result.isConfirmed) return;
+
     try {
 
       const response = await fetch(
-
         `http://localhost:8080/api/events/${id}`,
-
         {
-          method:"DELETE"
+          method: "DELETE"
         }
       );
 
+      if (response.ok) {
 
-
-      if(response.ok){
-
-        alert("Event Deleted Successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Deleted Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
 
         fetchEvents();
       }
 
-    } catch(error){
+    } catch (error) {
 
       console.log(error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Delete Failed!",
+        text: "Unable to delete event."
+      });
     }
   };
-
-
-
 
   return (
 
@@ -216,12 +208,12 @@ function AdminEvents() {
           </h2>
 
           <p>
-            <h3>Add, update and manage school event activities.</h3>
+            Add, update and manage school event activities.
           </p>
 
         </div>
 
-                 {/* FORM */}
+        {/* FORM */}
 
         <div className="event-form-card">
 
@@ -231,7 +223,7 @@ function AdminEvents() {
 
           </h3>
 
-        <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
 
             <div className="row">
 
@@ -249,8 +241,6 @@ function AdminEvents() {
 
               </div>
 
-
-
               <div className="col-md-6">
 
                 <input
@@ -265,6 +255,7 @@ function AdminEvents() {
               </div>
 
             </div>
+
             <input
               type="text"
               className="form-control"
@@ -274,6 +265,7 @@ function AdminEvents() {
               onChange={handleChange}
               required
             />
+
             <textarea
               rows="4"
               className="form-control"
@@ -294,22 +286,22 @@ function AdminEvents() {
 
         </div>
 
-              {/* EVENTS */}
+        {/* EVENTS */}
 
         <div className="events-grid">
 
           {events.map((event) => (
 
-            <div className="admin-event-card" key={event.id}>
-
-              {/* IMAGE */}
+            <div
+              className="admin-event-card"
+              key={event.id}
+            >
 
               <img
                 src={`/images/${event.image}`}
                 alt={event.title}
                 className="admin-event-image"
               />
-                     {/* CONTENT */}
 
               <div className="admin-event-content">
 
@@ -319,41 +311,26 @@ function AdminEvents() {
 
                 </span>
 
-
-
                 <h4>
                   {event.title}
                 </h4>
 
-
-
                 <p>
                   {event.description}
                 </p>
-                            {/* EDIT BUTTON */}
 
                 <button
                   className="edit-btn"
                   onClick={() => editEvent(event)}
                 >
-
                   Edit Event
-
                 </button>
-
-
-
-
-
-                {/* DELETE BUTTON */}
 
                 <button
                   className="delete-btn"
                   onClick={() => deleteEvent(event.id)}
                 >
-
                   Delete Event
-
                 </button>
 
               </div>

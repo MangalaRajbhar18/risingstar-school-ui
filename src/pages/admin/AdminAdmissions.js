@@ -183,15 +183,38 @@ function AdminAdmissions() {
                     <td>{admission.address}</td>
 
                     <td>
+                  <select
+                   className={
+                   admission.status === "Confirmed"
+                   ? "action-dropdown confirmed"
+                   : "action-dropdown"
+                  }
+                   value={admission.status || ""}
+                   onChange={(e) => {
+                   const action = e.target.value;
 
-                      <button
-                        className="delete-btn"
-                        onClick={() => deleteAdmission(admission.id)}
-                      >
-                        Delete
-                      </button>
+                   if (action === "Confirmed") {
+                   setAdmissions(
+                   admissions.map((item) =>
+                   item.id === admission.id
+                   ? { ...item, status: "Confirmed" }
+                   : item
+                  )
+                );
+                  }
 
-                    </td>
+                  if (action === "Delete") {
+                 deleteAdmission(admission.id);
+                  }
+              }}
+                >
+                  <option value=""> Select Action </option>
+
+                  <option value="Confirmed"> Confirm Admission </option>
+
+                  <option value="Delete"> Delete Admission </option>
+              </select>
+                </td>
 
                   </tr>
                 ))

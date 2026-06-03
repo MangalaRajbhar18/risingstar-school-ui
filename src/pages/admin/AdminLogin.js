@@ -19,9 +19,7 @@ function AdminLogin() {
       [e.target.name]: e.target.value
     });
   };
-
-
-
+  
   // LOGIN
   const handleLogin = async (e) => {
 
@@ -72,9 +70,7 @@ function AdminLogin() {
 
       <div className="admin-login-card">
 
-        <h2>
-          Admin Login
-        </h2>
+        <h2>Admin Login</h2>
 
         <p>
           Welcome back to Rising Star Public School
@@ -90,13 +86,7 @@ function AdminLogin() {
 
             <label>Email</label>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              onChange={handleChange}
-              required
-            />
+            <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} required />
 
           </div>
 
@@ -108,13 +98,7 @@ function AdminLogin() {
 
             <label>Password</label>
 
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              onChange={handleChange}
-              required
-            />
+            <input type="password"  name="password" placeholder="Enter your password"  onChange={handleChange} required/>
 
           </div>
 

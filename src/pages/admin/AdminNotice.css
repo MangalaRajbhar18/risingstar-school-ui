@@ -27,7 +27,7 @@
 }
 
 .notice-top p{
-  font-size:18px;
+  font-size:30px;
   color:#475569;
 }
 
@@ -70,10 +70,7 @@
   height:8px;
 
   background:
-  linear-gradient(to right,
-  #02113b,
-  #2563eb,
-  #60a5fa);
+  linear-gradient(to right, #02113b, #2563eb,  #60a5fa);
 }
 
 
@@ -116,7 +113,7 @@
 
   border-radius:18px;
 
-  font-size:16px;
+  font-size:20px;
 
   transition:0.3s;
 

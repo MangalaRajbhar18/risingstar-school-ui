@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Contact.css";
 import { FaInstagram } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 export default function Contact() {
 
@@ -22,39 +23,59 @@ export default function Contact() {
 
   // HANDLE SUBMIT
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
+  try {
 
-      const response = await fetch("http://localhost:8080/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
+    const response = await fetch("http://localhost:8080/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent Successfully!",
+        text: "Thank you for contacting us.",
+        confirmButtonColor: "#2563eb"
       });
 
-      if (response.ok) {
+      // CLEAR FORM
+      setFormData({
+        fullname: "",
+        contactnumber: "",
+        email: "",
+        message: ""
+      });
 
-        alert("Message Sent Successfully!");
+    } else {
 
-        // CLEAR FORM
-        setFormData({
-          fullname: "",
-          contactnumber: "",
-          email: "",
-          message: ""
-        });
+      Swal.fire({
+        icon: "error",
+        title: "Failed!",
+        text: "Unable to send message.",
+        confirmButtonColor: "#dc3545"
+      });
 
-      } else {
-        alert("Failed to send message");
-      }
-
-    } catch (error) {
-      console.log(error);
-      alert("Server Error");
     }
-  };
+
+  } catch (error) {
+
+    console.log(error);
+
+    Swal.fire({
+      icon: "error",
+      title: "Server Error!",
+      text: "Please try again later.",
+      confirmButtonColor: "#dc3545"
+    });
+
+  }
+};
 
   return (
     <div className="contact-page">

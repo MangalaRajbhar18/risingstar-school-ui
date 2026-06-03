@@ -22,7 +22,7 @@
 
 .admin-events-top p{
   color:#64748b;
-  font-size:17px;
+  font-size:20px;
   margin-top:10px;
 }
 
@@ -73,7 +73,7 @@
   background:#f8fafc;
   padding:16px;
   border-radius:16px;
-  font-size:15px;
+  font-size:20px;
   margin-bottom:18px;
 }
 
@@ -88,12 +88,13 @@
 /* BUTTON */
 
 .upload-btn{
+  font-size: 25px;
   border:none;
   background:linear-gradient(to right,#2563eb,#1d4ed8);
   color:white;
   padding:14px 30px;
   border-radius:14px;
-  font-weight:700;
+  font-weight:750;
   transition:0.3s;
   margin-top:10px;
 }

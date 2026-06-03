@@ -17,11 +17,7 @@ function Navbar() {
     <nav className="main-navbar">
 
       <div className="nav-container">
-
-
-
-
-
+        
         {/* LEFT LOGO */}
 
         <Link to="/" className="logo-link">
@@ -57,89 +53,27 @@ function Navbar() {
           </div>
 
         </Link>
-
-
-
-
-
-
-
-
-
+        
         {/* RIGHT MENU */}
 
         <div className="nav-menu">
 
-          <NavLink to="/" className="active-btn">
+          <NavLink to="/" className="active-btn"> HOME </NavLink>
+          
+          <NavLink to="/about"> ABOUT US </NavLink>
+          
+          <NavLink to="/admission"> ADMISSIONS </NavLink>
+          
+          <NavLink to="/events"> EVENTS </NavLink>
 
-            HOME
+          <NavLink to="/gallery"> GALLERY </NavLink>
+          
+          <NavLink to="/contact"> CONTACT </NavLink>
+          
+          
+           {/* ADMIN LOGIN */}
 
-          </NavLink>
-
-
-
-
-
-          <NavLink to="/about">
-
-            ABOUT US
-
-          </NavLink>
-
-
-
-
-
-          <NavLink to="/admission">
-
-            ADMISSIONS
-
-          </NavLink>
-
-
-
-
-
-          <NavLink to="/events">
-
-            EVENTS
-
-          </NavLink>
-
-
-
-
-
-          <NavLink to="/gallery">
-
-            GALLERY
-
-          </NavLink>
-
-
-
-
-
-          <NavLink to="/contact">
-
-            CONTACT
-
-          </NavLink>
-
-
-
-
-
-
-
-
-
-          {/* ADMIN LOGIN */}
-
-          <NavLink
-            to="/admin-login"
-            className="admin-login-btn"
-          >
+          <NavLink to="/admin-login" className="admin-login-btn">
 
             <FaUserShield className="admin-icon" />
 

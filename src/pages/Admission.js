@@ -186,12 +186,11 @@ function Admission() {
                     <label>Class Applying For *</label>
 
                     <select
-                      className="form-control"
-                      name="classApplyingFor"
-                      value={admission.classApplyingFor}
-                      onChange={handleChange}
-                      required
-                    >
+                        className="form-control custom-select"
+                        name="classApplyingFor"
+                        value={admission.classApplyingFor}
+                        onChange={handleChange}
+                         required>
 
                       <option value="">
                         Select Class
@@ -239,7 +238,7 @@ function Admission() {
                     <label>Gender *</label>
 
                     <select
-                      className="form-control"
+                       className="form-control custom-select"
                       name="gender"
                       value={admission.gender}
                       onChange={handleChange}

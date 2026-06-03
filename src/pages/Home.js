@@ -10,7 +10,6 @@ import Swal from "sweetalert2";
 
 import NoticeBoard from "../components/NoticeBoard";
 
-
 // HERO IMAGES
 
 import hero1 from "../assets/main.jpg";
@@ -18,76 +17,44 @@ import hero2 from "../assets/sc2.jpg";
 import hero3 from "../assets/sc3.jpg";
 import hero4 from "../assets/sc4.jpg";
 
-
-
-
-
 export default function Home() {
-
-
-
-
 
   // HERO SLIDER
 
   const heroImages = [
-
     hero1,
     hero2,
     hero3,
     hero4
   ];
 
+  const [currentImage, setCurrentImage] = useState(0);
 
+  useEffect(() => {
 
+    const interval = setInterval(() => {
 
+      setCurrentImage((prev) =>
 
-  const [currentImage,setCurrentImage]
-  = useState(0);
+        prev === heroImages.length - 1
+          ? 0
+          : prev + 1
+      );
 
+    }, 4000);
 
+    return () => clearInterval(interval);
 
-
-
- useEffect(() => {
-
-  const interval = setInterval(() => {
-
-    setCurrentImage((prev) =>
-
-      prev === heroImages.length - 1
-      ? 0
-      : prev + 1
-    );
-
-  },4000);
-
-
-
-
-
-  return () => clearInterval(interval);
-
-},[heroImages.length]);
-
-
-
-
-
-
+  }, [heroImages.length]);
 
   // CONTACT FORM
 
   const [contactData, setContactData] = useState({
 
-    name:"",
-    email:"",
-    message:""
+    fullname: "",
+    email: "",
+    message: ""
   });
-
-
-
-
 
   const handleChange = (e) => {
 
@@ -95,13 +62,9 @@ export default function Home() {
 
       ...contactData,
 
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value
     });
   };
-
-
-
-
 
   const handleSubmit = async (e) => {
 
@@ -111,66 +74,87 @@ export default function Home() {
 
       const response = await fetch(
 
-        "http://localhost:8080/api/messages",
+        "http://localhost:8080/api/contact",
 
         {
-          method:"POST",
+          method: "POST",
 
-          headers:{
-            "Content-Type":"application/json"
+          headers: {
+            "Content-Type": "application/json"
           },
 
-          body:JSON.stringify(contactData)
+          body: JSON.stringify(contactData)
         }
       );
 
+      const data = await response.json();
 
+      console.log(data);
 
-
-
-      if(response.ok){
+      if (response.ok) {
 
         Swal.fire({
 
-          icon:"success",
+          icon: "success",
 
-          title:"Message Sent Successfully",
+          title: "Message Sent Successfully",
 
-          showConfirmButton:false,
+          text: "We will contact you soon.",
 
-          timer:1500
+          showConfirmButton: false,
+
+          timer: 2000
         });
-
-
-
-
 
         setContactData({
 
-          name:"",
-          email:"",
-          message:""
+          fullname: "",
+          email: "",
+          message: ""
+        });
+
+      } else {
+
+        Swal.fire({
+
+          icon: "error",
+
+          title: "Failed",
+
+          text: "Message not sent"
         });
       }
 
-    } catch(error){
+    } catch (error) {
 
       console.log(error);
+
+      Swal.fire({
+
+        icon: "error",
+
+        title: "Server Error",
+
+        text: "Backend is not running"
+      });
     }
   };
 
-
-
-
-
-
-
   return (
 
-    <div>
+    
+    
+  <div>
 
+    {/* ADMISSION OPEN BANNER */}
 
+    <div className="admission-marquee">
 
+      <p>
+        🎓 ADMISSIONS OPEN FOR 2026-27 | Nursery to Grade 10 | Limited Seats Available | Contact: +91 9619955507
+      </p>
+
+    </div>
 
 
       {/* HERO SECTION */}
@@ -183,15 +167,7 @@ export default function Home() {
           className="hero-image"
         />
 
-
-
-
-
         <div className="hero-overlay"></div>
-
-
-
-
 
         <div className="hero-text-box">
 
@@ -199,17 +175,13 @@ export default function Home() {
             Welcome to
           </h1>
 
-
-
-
-
           <h2>
             Rising Star Public School
           </h2>
-
-
-
-
+          
+          <div className="legacy-badge">
+             🎓 50+ Years of Teaching Legacy
+          </div>
 
           <p className="tagline">
 
@@ -222,25 +194,9 @@ export default function Home() {
 
       </section>
 
-
-
-
-
-
-
-
-
       {/* NOTICE BOARD */}
 
       <NoticeBoard />
-
-
-
-
-
-
-
-
 
       {/* ABOUT SECTION */}
 
@@ -251,10 +207,6 @@ export default function Home() {
           About Our School
 
         </h1>
-
-
-
-
 
         <p className="about-text">
 
@@ -270,12 +222,6 @@ export default function Home() {
 
         </p>
 
-
-
-
-
-
-
         {/* STATS */}
 
         <div className="stats-container">
@@ -288,10 +234,6 @@ export default function Home() {
 
           </div>
 
-
-
-
-
           <div className="stat-card">
 
             <h1>20+</h1>
@@ -299,10 +241,6 @@ export default function Home() {
             <p>Teachers</p>
 
           </div>
-
-
-
-
 
           <div className="stat-card">
 
@@ -316,14 +254,6 @@ export default function Home() {
 
       </section>
 
-
-
-
-
-
-
-
-
       {/* WHY SECTION */}
 
       <section className="why-section container">
@@ -333,10 +263,6 @@ export default function Home() {
           Why Parents Trust Us
 
         </h2>
-
-
-
-
 
         <div className="why-container">
 
@@ -352,10 +278,6 @@ export default function Home() {
 
           </div>
 
-
-
-
-
           <div className="why-card green">
 
             <h1>
@@ -367,10 +289,6 @@ export default function Home() {
             </p>
 
           </div>
-
-
-
-
 
           <div className="why-card orange">
 
@@ -388,14 +306,6 @@ export default function Home() {
 
       </section>
 
-
-
-
-
-
-
-
-
       {/* CONTACT */}
 
       <section className="contact-section container">
@@ -406,14 +316,7 @@ export default function Home() {
 
         </h1>
 
-
-
-
-
         <div className="contact-wrapper">
-
-
-
 
           {/* LEFT */}
 
@@ -423,33 +326,17 @@ export default function Home() {
               Rising Star Public School
             </h1>
 
-
-
-
-
             <p>
               📍 Jay Matadi Kalher Thane(W), Maharashtra
             </p>
-
-
-
-
 
             <p>
               📞 +91 9619955507
             </p>
 
-
-
-
-
             <p>
               📧 rsps1408@gmail.com
             </p>
-
-
-
-
 
             <a
               href="https://www.instagram.com/officialrspsschool?igsh=d3dtaHEwenBhdjky"
@@ -466,13 +353,6 @@ export default function Home() {
 
           </div>
 
-
-
-
-
-
-
-
           {/* RIGHT */}
 
           <div className="contact-form">
@@ -482,15 +362,11 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Your Name"
-                name="name"
-                value={contactData.name}
+                name="fullname"
+                value={contactData.fullname}
                 onChange={handleChange}
                 required
               />
-
-
-
-
 
               <input
                 type="email"
@@ -501,10 +377,6 @@ export default function Home() {
                 required
               />
 
-
-
-
-
               <textarea
                 rows="4"
                 placeholder="Your Message"
@@ -513,10 +385,6 @@ export default function Home() {
                 onChange={handleChange}
                 required
               ></textarea>
-
-
-
-
 
               <button type="submit">
 

@@ -17,7 +17,7 @@
 
     border-radius:15px;
 
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    box-shadow:0 4px 15px rgba(1, 0, 16, 0.08);
 }
 
 .messages-header h2{
@@ -118,27 +118,35 @@
 
 
 
-/* ===== DELETE BUTTON ===== */
-
-.delete-btn{
-    background:#dc3545;
-    color:white;
-
+.action-dropdown{
+    width:170px;
+    height:42px;
     border:none;
-
-    padding:10px 16px;
-
-    border-radius:8px;
-
-    font-weight:600;
-
+    border-radius:10px;
+    padding:0 12px;
+    font-weight:700;
     cursor:pointer;
-
+    background:#f3f4f6;
+    color:#333;
     transition:0.3s;
 }
 
-.delete-btn:hover{
-    background:#bb2d3b;
+.action-dropdown:focus{
+    outline:none;
+}
+
+/* FOLLOW UP */
+
+.action-dropdown.followup{
+    background:#f59e0b;
+    color:white;
+}
+
+/* CONFIRMED */
+
+.action-dropdown.confirmed{
+    background:#22c55e;
+    color:white;
 }
 
 

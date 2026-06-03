@@ -45,30 +45,19 @@ function AdminLayout() {
 
         <div className="admin-sidebar">
 
-          <NavLink to="/admin/messages">
-            Messages
-          </NavLink>
+          <NavLink to="/admin/messages"> Messages</NavLink>
 
-          <NavLink to="/admin/admissions">
-            Admissions
-          </NavLink>
+          <NavLink to="/admin/admissions"> Admissions </NavLink>
 
-          <NavLink to="/admin/events">
-            Events
-          </NavLink>
+          <NavLink to="/admin/events">  Events </NavLink>
 
-          <NavLink to="/admin/gallery">
-            Gallery
-          </NavLink>
-          <NavLink to="/admin/notices">
-                            Notices
-          </NavLink>
-          <NavLink to="/admin/pamphlets">
-             Pamphlets
-           </NavLink>
-          <NavLink to="/admin/dashboard">
-           Dashboard
-          </NavLink>
+          <NavLink to="/admin/gallery">  Gallery </NavLink>
+          
+          <NavLink to="/admin/notices"> Notices </NavLink>
+          
+          <NavLink to="/admin/pamphlets"> Pamphlets </NavLink>
+          
+          <NavLink to="/admin/dashboard"> Dashboard </NavLink>
 
 
           <button
