@@ -27,7 +27,7 @@ function AdminNotice() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/notices"
+        "https://rising-star-public-school.onrender.com/api/notices"
       );
 
       const data = await response.json();
@@ -78,7 +78,7 @@ function AdminNotice() {
 
     try {
 
-      let url = "http://localhost:8080/api/notices";
+      let url = "https://rising-star-public-school.onrender.com/api/notices";
 
       let method = "POST";
 
@@ -90,7 +90,7 @@ function AdminNotice() {
 
       if(editId){
 
-        url = `http://localhost:8080/api/notices/${editId}`;
+        url = `https://rising-star-public-school.onrender.com/api/notices/${editId}`;
 
         method = "PUT";
       }
