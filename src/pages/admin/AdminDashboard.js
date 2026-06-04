@@ -30,19 +30,19 @@ function AdminDashboard() {
       // FETCH ALL DATA
 
       const admissionsRes = await fetch(
-        "http://localhost:8080/api/admission"
+        "https://rising-star-public-school.onrender.com/api/admission"
       );
 
       const eventsRes = await fetch(
-        "http://localhost:8080/api/events"
+        "https://rising-star-public-school.onrender.com/api/events"
       );
 
       const messagesRes = await fetch(
-        "http://localhost:8080/api/contact"
+        "https://rising-star-public-school.onrender.com/api/contact"
       );
 
        const galleryRes = await fetch(
-      "http://localhost:8080/api/gallery"
+      "https://rising-star-public-school.onrender.com/api/gallery"
     );
 
 

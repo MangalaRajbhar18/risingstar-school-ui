@@ -12,7 +12,7 @@ function AdminMessages() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/contact"
+        "https://rising-star-public-school.onrender.com/api/contact"
       );
 
       const data = await response.json();
@@ -40,7 +40,7 @@ function AdminMessages() {
     try {
 
       await fetch(
-        `http://localhost:8080/api/contact/${id}`,
+        `https://rising-star-public-school.onrender.com/api/contact/${id}`,
         {
           method: "DELETE",
         }

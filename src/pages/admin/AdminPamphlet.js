@@ -19,7 +19,7 @@ function AdminPamphlet() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/pamphlets"
+        "https://rising-star-public-school.onrender.com/api/pamphlets"
       );
 
       const data = await response.json();
@@ -56,7 +56,7 @@ function AdminPamphlet() {
 
       const response = await fetch(
 
-        "http://localhost:8080/api/pamphlets",
+        "https://rising-star-public-school.onrender.com/api/pamphlets",
 
         {
           method:"POST",
@@ -113,7 +113,7 @@ function AdminPamphlet() {
 
       const response = await fetch(
 
-        `http://localhost:8080/api/pamphlets/${id}`,
+        `https://rising-star-public-school.onrender.com/api/pamphlets/${id}`,
 
         {
           method:"DELETE"

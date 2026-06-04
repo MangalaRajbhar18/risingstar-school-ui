@@ -20,7 +20,7 @@ function Gallery() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/gallery"
+        "https://rising-star-public-school.onrender.com/api/gallery"
       );
 
       const data = await response.json();

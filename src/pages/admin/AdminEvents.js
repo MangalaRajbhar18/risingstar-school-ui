@@ -22,7 +22,7 @@ function AdminEvents() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/events"
+        "https://rising-star-public-school.onrender.com/api/events"
       );
 
       const data = await response.json();
@@ -66,7 +66,7 @@ function AdminEvents() {
       if (editId) {
 
         response = await fetch(
-          `http://localhost:8080/api/events/${editId}`,
+          `https://rising-star-public-school.onrender.com/api/events/${editId}`,
           {
             method: "PUT",
             headers: {
@@ -79,7 +79,7 @@ function AdminEvents() {
       } else {
 
         response = await fetch(
-          "http://localhost:8080/api/events",
+          "https://rising-star-public-school.onrender.com/api/events",
           {
             method: "POST",
             headers: {
@@ -163,7 +163,7 @@ function AdminEvents() {
     try {
 
       const response = await fetch(
-        `http://localhost:8080/api/events/${id}`,
+        `https://rising-star-public-school.onrender.com/api/events/${id}`,
         {
           method: "DELETE"
         }

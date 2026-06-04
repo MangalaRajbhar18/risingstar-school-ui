@@ -23,7 +23,7 @@ function AdminGallery() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/gallery"
+        "https://rising-star-public-school.onrender.com/api/gallery"
       );
 
       const data = await response.json();
@@ -73,7 +73,7 @@ function AdminGallery() {
 
       const response = await fetch(
 
-        "http://localhost:8080/api/gallery",
+        "https://rising-star-public-school.onrender.com/api/gallery",
 
         {
           method:"POST",
@@ -136,7 +136,7 @@ function AdminGallery() {
 
       const response = await fetch(
 
-        `http://localhost:8080/api/gallery/${id}`,
+        `https://rising-star-public-school.onrender.com/api/gallery/${id}`,
 
         {
           method:"DELETE"

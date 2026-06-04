@@ -74,7 +74,7 @@ export default function Home() {
 
       const response = await fetch(
 
-        "http://localhost:8080/api/contact",
+        "https://rising-star-public-school.onrender.com/api/contact",
 
         {
           method: "POST",

@@ -28,7 +28,7 @@ function AdminLogin() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/admin/login",
+        "https://rising-star-public-school.onrender.com/api/admin/login",
         {
           method: "POST",
 

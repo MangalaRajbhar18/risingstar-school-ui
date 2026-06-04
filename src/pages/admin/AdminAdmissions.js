@@ -12,7 +12,7 @@ function AdminAdmissions() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8080/api/admission")
+    fetch("https://rising-star-public-school.onrender.com/api/admission")
 
       .then((response) => response.json())
 
@@ -46,7 +46,7 @@ function AdminAdmissions() {
 
         const response = await fetch(
 
-          `http://localhost:8080/api/admission/${id}`,
+          `https://rising-star-public-school.onrender.com/api/admission/${id}`,
 
           {
             method:"DELETE"

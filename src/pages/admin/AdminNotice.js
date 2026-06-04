@@ -168,7 +168,7 @@ function AdminNotice() {
 
       const response = await fetch(
 
-        `http://localhost:8080/api/notices/${id}`,
+        `https://rising-star-public-school.onrender.com/api/notices/${id}`,
 
         {
           method:"DELETE"

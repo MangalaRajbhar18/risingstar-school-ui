@@ -43,7 +43,7 @@ function Admission() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/admission",
+        "https://rising-star-public-school.onrender.com/api/admission",
         {
           method:"POST",
 

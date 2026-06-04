@@ -17,7 +17,7 @@ function Events() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/events"
+        "https://rising-star-public-school.onrender.com/api/events"
       );
 
       const data = await response.json();
