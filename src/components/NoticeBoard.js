@@ -24,7 +24,7 @@ function NoticeBoard() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/notices"
+        "https://rising-star-public-school.onrender.com/api/notices"
       );
 
       const data = await response.json();
@@ -48,7 +48,7 @@ function NoticeBoard() {
     try {
 
       const response = await fetch(
-        "http://localhost:8080/api/pamphlets"
+        "https://rising-star-public-school.onrender.com/api/pamphlets"
       );
 
       const data = await response.json();
