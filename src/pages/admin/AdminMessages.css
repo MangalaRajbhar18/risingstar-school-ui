@@ -153,20 +153,30 @@
 
 /* ===== RESPONSIVE ===== */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-    .messages-header{
-        flex-direction:column;
-        gap:15px;
-        align-items:flex-start;
-    }
+  .messages-page{
+    padding:10px;
+  }
 
-    .messages-table{
-        font-size:50px;
-    }
+  .messages-title{
+    font-size:24px;
+  }
 
-    .messages-table th,
-    .messages-table td{
-        padding:12px;
-    }
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  th,
+  td{
+    font-size:13px;
+    padding:8px;
+  }
+
+  .delete-btn{
+    padding:6px 10px;
+    font-size:12px;
+  }
 }
