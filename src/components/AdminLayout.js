@@ -4,6 +4,7 @@ import "./AdminLayout.css";
 function AdminLayout() {
 
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // LOGOUT
   const handleLogout = () => {
@@ -26,6 +27,12 @@ function AdminLayout() {
           Rising Star Public School
         </div>
 
+        <div
+             className="menu-icon"
+            onClick={() => setMenuOpen(!menuOpen)}
+        >☰
+        </div>
+
         <button
           className="logout-btn"
           onClick={handleLogout}
@@ -39,7 +46,7 @@ function AdminLayout() {
 
       {/* ===== MAIN SECTION ===== */}
 
-      <div className="admin-main">
+      <div className={`admin-sidebar ${menuOpen ? "active" : ""}`}>
 
         {/* ===== SIDEBAR ===== */}
 

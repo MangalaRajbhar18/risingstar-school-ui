@@ -105,23 +105,33 @@
 }
 
 
-/* ================================= */
-/* MOBILE RESPONSIVE */
-/* ================================= */
+/* HAMBURGER */
 
-@media (max-width: 768px){
+.menu-icon{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
 
     .admin-navbar{
-        padding:0 10px;
+        padding:15px;
     }
 
     .admin-logo{
-        font-size:14px;
+        font-size:16px;
     }
 
     .logout-btn{
-        padding:8px 12px;
-        font-size:12px;
+        display:none;
+    }
+
+    .menu-icon{
+        display:block;
     }
 
     .admin-main{
@@ -129,24 +139,26 @@
     }
 
     .admin-sidebar{
-        width:100%;
-        flex-direction:row;
-        overflow-x:auto;
-        gap:10px;
-        padding:10px;
+        position:fixed;
+        top:70px;
+        left:-100%;
+        width:250px;
+        height:100vh;
+        z-index:999;
+        transition:0.4s;
+        background:white;
+    }
+
+    .admin-sidebar.active{
+        left:0;
     }
 
     .admin-sidebar a{
-        white-space:nowrap;
-        font-size:14px;
-        padding:8px 12px;
+        font-size:18px;
     }
 
     .sidebar-logout{
-        font-size:14px;
-        padding:8px 12px;
-        margin-top:0;
-        white-space:nowrap;
+        font-size:18px;
     }
 
     .admin-content{
