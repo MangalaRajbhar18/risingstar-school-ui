@@ -133,16 +133,25 @@
 
 
 
-/* RESPONSIVE */
+@media (max-width:768px){
 
-@media(max-width:768px){
-
-  .admin-admission-page{
-    padding: 15px;
+  .dashboard-top h1{
+    font-size:28px;
   }
 
-  .admin-admission-header h1{
-    font-size: 26px;
+  .dashboard-top p{
+    font-size:16px;
   }
 
+  .dashboard-card{
+    padding:20px;
+  }
+
+  .dashboard-icon{
+    font-size:50px;
+  }
+
+  .dashboard-card h2{
+    font-size:30px;
+  }
 }

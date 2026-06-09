@@ -83,3 +83,26 @@
   font-size:17px;
   font-weight:600;
 }
+
+@media (max-width:768px){
+
+  .dashboard-top h1{
+    font-size:28px;
+  }
+
+  .dashboard-top p{
+    font-size:16px;
+  }
+
+  .dashboard-card{
+    padding:20px;
+  }
+
+  .dashboard-icon{
+    font-size:50px;
+  }
+
+  .dashboard-card h2{
+    font-size:30px;
+  }
+}
