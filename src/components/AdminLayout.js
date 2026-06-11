@@ -7,7 +7,6 @@ function AdminLayout() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // LOGOUT
   const handleLogout = () => {
 
     localStorage.removeItem("adminLogin");
@@ -16,21 +15,20 @@ function AdminLayout() {
   };
 
   return (
-
     <div>
 
-      {/* ===== NAVBAR ===== */}
+      {/* NAVBAR */}
 
       <div className="admin-navbar">
 
         <div className="admin-logo">
 
-  <button
-    className="menu-btn"
-    onClick={() => setMenuOpen(!menuOpen)}
-         >
+          <button
+            className="menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             ☰
-         </button>
+          </button>
 
           Rising Star Public School
 
@@ -46,29 +44,62 @@ function AdminLayout() {
       </div>
 
 
+      {/* MAIN SECTION */}
 
-      {/* ===== MAIN SECTION ===== */}
+      <div className="admin-main">
 
-      <div className={`admin-sidebar ${menuOpen ? "show" : ""}`}>
+        {/* SIDEBAR */}
 
-        {/* ===== SIDEBAR ===== */}
+        <div className={`admin-sidebar ${menuOpen ? "show" : ""}`}>
 
-        <div className="admin-sidebar">
+          <NavLink
+            to="/admin/messages"
+            onClick={() => setMenuOpen(false)}
+          >
+            Messages
+          </NavLink>
 
-          <NavLink to="/admin/messages"> Messages</NavLink>
+          <NavLink
+            to="/admin/admissions"
+            onClick={() => setMenuOpen(false)}
+          >
+            Admissions
+          </NavLink>
 
-          <NavLink to="/admin/admissions"> Admissions </NavLink>
+          <NavLink
+            to="/admin/events"
+            onClick={() => setMenuOpen(false)}
+          >
+            Events
+          </NavLink>
 
-          <NavLink to="/admin/events">  Events </NavLink>
+          <NavLink
+            to="/admin/gallery"
+            onClick={() => setMenuOpen(false)}
+          >
+            Gallery
+          </NavLink>
 
-          <NavLink to="/admin/gallery">  Gallery </NavLink>
-          
-          <NavLink to="/admin/notices"> Notices </NavLink>
-          
-          <NavLink to="/admin/pamphlets"> Pamphlets </NavLink>
-          
-          <NavLink to="/admin/dashboard"> Dashboard </NavLink>
+          <NavLink
+            to="/admin/notices"
+            onClick={() => setMenuOpen(false)}
+          >
+            Notices
+          </NavLink>
 
+          <NavLink
+            to="/admin/pamphlets"
+            onClick={() => setMenuOpen(false)}
+          >
+            Pamphlets
+          </NavLink>
+
+          <NavLink
+            to="/admin/dashboard"
+            onClick={() => setMenuOpen(false)}
+          >
+            Dashboard
+          </NavLink>
 
           <button
             className="sidebar-logout"
@@ -80,11 +111,12 @@ function AdminLayout() {
         </div>
 
 
-
-        {/* ===== CONTENT ===== */}
+        {/* CONTENT */}
 
         <div className="admin-content">
+
           <Outlet />
+
         </div>
 
       </div>
