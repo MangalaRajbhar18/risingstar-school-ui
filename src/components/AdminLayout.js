@@ -23,15 +23,17 @@ function AdminLayout() {
 
       <div className="admin-navbar">
 
-         
         <div className="admin-logo">
-          Rising Star Public School
-        </div>
 
-        <div
-             className="menu-icon"
-            onClick={() => setMenuOpen(!menuOpen)}
-        >☰
+  <button
+    className="menu-btn"
+    onClick={() => setMenuOpen(!menuOpen)}
+         >
+            ☰
+         </button>
+
+          Rising Star Public School
+
         </div>
 
         <button
@@ -47,7 +49,7 @@ function AdminLayout() {
 
       {/* ===== MAIN SECTION ===== */}
 
-      <div className={`admin-sidebar ${menuOpen ? "active" : ""}`}>
+      <div className={`admin-sidebar ${menuOpen ? "show" : ""}`}>
 
         {/* ===== SIDEBAR ===== */}
 

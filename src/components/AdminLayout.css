@@ -105,63 +105,75 @@
 }
 
 
-/* HAMBURGER */
+/* HAMBURGER BUTTON */
 
-.menu-icon{
+.menu-btn{
     display:none;
-    font-size:32px;
-    cursor:pointer;
+    background:none;
+    border:none;
     color:white;
+    font-size:28px;
+    cursor:pointer;
+    margin-right:10px;
 }
 
-/* MOBILE */
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
 
 @media(max-width:768px){
 
-    .admin-navbar{
-        padding:15px;
-    }
+  .menu-btn{
+      display:inline-block;
+  }
 
-    .admin-logo{
-        font-size:16px;
-    }
+  .admin-main{
+      flex-direction:column;
+  }
 
-    .logout-btn{
-        display:none;
-    }
+  .admin-sidebar{
 
-    .menu-icon{
-        display:block;
-    }
+      position:fixed;
 
-    .admin-main{
-        flex-direction:column;
-    }
+      top:70px;
+      left:-100%;
 
-    .admin-sidebar{
-        position:fixed;
-        top:70px;
-        left:-100%;
-        width:250px;
-        height:100vh;
-        z-index:999;
-        transition:0.4s;
-        background:white;
-    }
+      width:250px;
+      height:100vh;
 
-    .admin-sidebar.active{
-        left:0;
-    }
+      background:white;
 
-    .admin-sidebar a{
-        font-size:18px;
-    }
+      transition:0.3s;
 
-    .sidebar-logout{
-        font-size:18px;
-    }
+      z-index:1000;
+  }
 
-    .admin-content{
-        padding:15px;
-    }
+  .admin-sidebar.show{
+      left:0;
+  }
+
+  .admin-sidebar a{
+      font-size:18px;
+  }
+
+  .sidebar-logout{
+      font-size:18px;
+  }
+
+  .admin-logo{
+      font-size:18px;
+      display:flex;
+      align-items:center;
+  }
+
+  .logout-btn{
+      font-size:14px;
+      padding:8px 12px;
+  }
+
+  .admin-content{
+      padding:15px;
+      width:100%;
+  }
+
 }
