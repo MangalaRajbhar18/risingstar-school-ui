@@ -151,7 +151,7 @@ export default function Home() {
     <div className="admission-marquee">
 
       <p>
-        🎓 ADMISSIONS OPEN FOR 2026-27 | Nursery to Grade 10 | Limited Seats Available | Contact: +91 9619955507
+        🎓 ADMISSIONS OPEN FOR 2026-27 | Nursery to Grade 10 | Limited Seats Available | Contact: +91 9137886493
       </p>
 
     </div>
