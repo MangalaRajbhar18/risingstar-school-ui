@@ -651,42 +651,7 @@ body,
     line-height:1.7;
   }
 
-  .contact-section{
-    padding:50px 15px;
-  }
-
-  .contact-wrapper{
-    flex-direction:column;
-  }
-
-  .contact-info,
-  .contact-form{
-    width:100%;
-    min-width:100%;
-    padding:25px;
-    border-radius:20px;
-  }
-
-  .contact-info h1{
-    font-size:26px;
-  }
-
-  .contact-info p{
-    font-size:15px;
-  }
-
-  .contact-form input,
-  .contact-form textarea{
-    padding:14px;
-    font-size:14px;
-  }
-
-  .contact-form button{
-    padding:14px;
-    font-size:15px;
-  }
 }
-
 /* ADMISSION OPEN BANNER */
 
 .admission-marquee{
