@@ -200,7 +200,7 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
 
-      <section className="about-section container">
+      <section className="about-section ">
 
         <h1 className="section-title">
 
@@ -256,7 +256,7 @@ export default function Home() {
 
       {/* WHY SECTION */}
 
-      <section className="why-section container">
+      <section className="why-section ">
 
         <h2 className="section-title">
 
@@ -308,7 +308,7 @@ export default function Home() {
 
       {/* CONTACT */}
 
-      <section className="contact-section container">
+      <section className="contact-section ">
 
         <h1 className="section-title">
 
